@@ -5,6 +5,7 @@ brew install wget
 brew install coreutils
 brew install zsh
 brew install tmux
+brew install tree
 
 ln -sf $(grealpath ./shell/profile) ~/.profile
 ln -sf $(grealpath ./shell/tmux.conf) ~/.tmux.conf
