@@ -11,8 +11,13 @@ zstyle ':prompt:grml:right:setup' items rc returnSymbol
 
 # alias
 alias ll='ls -GFhla'
+unalias ag
+alias ag='ag --smart-case --color-line-number "1;34"'
 
 # colorize terminal
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export TERM=screen-256color
 
+# remove timeout to get ecs key working in emacs
+KEYTIMEOUT=1

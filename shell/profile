@@ -1,2 +1,2 @@
-tmux
-
+export TERM=screen-256color
+tmux -2
