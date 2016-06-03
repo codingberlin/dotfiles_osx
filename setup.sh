@@ -8,6 +8,7 @@ brew install tmux
 brew install tree
 brew install --with-cocoa emacs
 brew install aspell
+brew install hunspell
 brew install sbt
 brew install ag
 
