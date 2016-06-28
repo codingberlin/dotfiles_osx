@@ -1,10 +1,22 @@
 [user]
 	name = sbauer
 	email = stephan.bauer@immobilienscout24.de
+
 [core]
 	autocrlf = input
+
+[push]
+	default = tracking
 
 [alias]
 	rup = remote update --prune
 	ffm = merge --ff-only
 	uff = !sh -c 'git rup && git ffm'
+
+[color]
+	ui = true
+
+[color "status"]
+	added = green bold
+	changed = magenta bold
+	untracked = red bold
