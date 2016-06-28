@@ -17,5 +17,5 @@ ln -sf $(grealpath ./shell/tmux.conf) ~/.tmux.conf
 ln -sf $(grealpath ./shell/zshrc.local) ~/.zshrc.local
 ln -sf $(grealpath ./shell/vimrc) ~/.vimrc
 ln -sf $(grealpath ./shell/zshrc) ~/.zshrc
-ln -sf $(grealpath ./emacs.d) ~/.emacs.d
+ln -sf $(grealpath ./shell/gitconfig) ~/.gitconfig
 
