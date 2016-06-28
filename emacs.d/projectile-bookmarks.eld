@@ -1,1 +1,0 @@
-("~/shield/baker-street/" "~/shield/sherlock/" "~/dotfiles_osx/" "~/shield/deviceidentification/" "~/shield/utm-service/" "~/shield/is24-play-common/" "~/shield/sherlock-analysis/" "/usr/local/")
