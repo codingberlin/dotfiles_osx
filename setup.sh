@@ -26,3 +26,5 @@ ln -sf $(grealpath ./shell/zshrc) ~/.zshrc
 ln -sf $(grealpath ./shell/gitconfig) ~/.gitconfig
 ln -sf $(grealpath ./git-radar/git-radar) ~/bin/git-radar
 
+git config --global alias.lg "log --all --decorate --oneline --graph"
+
