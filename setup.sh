@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 set -u -e -E -C -o pipefail
 
+
+cd /usr/local/share/
+sudo chmod -R 755 zsh
+sudo chown -R root:staff zsh
+cd -
+
+git submodule update --init --recursive
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || true
+brew update
 brew install wget
 brew install coreutils
 brew install zsh
@@ -13,9 +22,8 @@ brew install sbt
 brew install ag
 brew install tig
 
-
 if ! [ -d ~/bin ]; then
-  mkdir -f ~/bin
+  mkdir ~/bin
 fi
 
 ln -sf $(grealpath ./shell/profile) ~/.profile
