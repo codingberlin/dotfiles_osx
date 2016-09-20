@@ -12,6 +12,7 @@
 	rup = remote update --prune
 	ffm = merge --ff-only
 	uff = !sh -c 'git rup && git ffm'
+	lg = log --all --decorate --oneline --graph
 
 [color]
 	ui = true

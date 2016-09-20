@@ -1,38 +1,37 @@
 #!/usr/bin/env bash
 set -u -e -E -C -o pipefail
 
-
-cd /usr/local/share/
-sudo chmod -R 755 zsh
-sudo chown -R root:staff zsh
-cd -
-
-git submodule update --init --recursive
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || true
+#brew
+which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
+
 brew install wget
 brew install coreutils
+
+### zsh
 brew install zsh
+ln -sf $(grealpath ./shell/profile) ~/.profile
+ln -sf $(grealpath ./shell/zshrc) ~/.zshrc
+ln -sf $(grealpath ./shell/zshrc.local) ~/.zshrc.local
+# https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories/22753363
+sudo chmod -R 755 /usr/local/share/zsh
+sudo chown -R root:staff /usr/local/share/zsh
+
 brew install tmux
+ln -sf $(grealpath ./shell/tmux.conf) ~/.tmux.conf
 brew install tree
-brew install --with-cocoa emacs
 brew install aspell
 brew install hunspell
 brew install sbt
 brew install ag
 brew install tig
 
+ln -sf $(grealpath ./shell/vimrc) ~/.vimrc
+ln -sf $(grealpath ./shell/gitconfig) ~/.gitconfig
+
+### git radar
+git submodule update --init --recursive
 if ! [ -d ~/bin ]; then
   mkdir ~/bin
 fi
-
-ln -sf $(grealpath ./shell/profile) ~/.profile
-ln -sf $(grealpath ./shell/tmux.conf) ~/.tmux.conf
-ln -sf $(grealpath ./shell/zshrc.local) ~/.zshrc.local
-ln -sf $(grealpath ./shell/vimrc) ~/.vimrc
-ln -sf $(grealpath ./shell/zshrc) ~/.zshrc
-ln -sf $(grealpath ./shell/gitconfig) ~/.gitconfig
 ln -sf $(grealpath ./git-radar/git-radar) ~/bin/git-radar
-
-git config --global alias.lg "log --all --decorate --oneline --graph"
-
