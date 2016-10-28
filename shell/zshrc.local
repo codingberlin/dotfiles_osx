@@ -17,6 +17,7 @@ zstyle ':prompt:grml:right:setup' items rc returnSymbol
 # alias
 alias ll='ls -GFhla'
 alias ag='ag --smart-case --color-line-number "1;34"'
+alias beer='brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor'
 
 # colorize terminal
 export CLICOLOR=1
