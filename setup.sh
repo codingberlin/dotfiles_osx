@@ -13,6 +13,7 @@ brew install zsh
 ln -sf $(grealpath ./shell/profile) ~/.profile
 ln -sf $(grealpath ./shell/zshrc) ~/.zshrc
 ln -sf $(grealpath ./shell/zshrc.local) ~/.zshrc.local
+ln -sf $(grealpath ./shell/ideavimrc) ~/.ideavimrc
 # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories/22753363
 sudo chmod -R 755 /usr/local/share/zsh
 sudo chown -R root:staff /usr/local/share/zsh
