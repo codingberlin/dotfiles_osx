@@ -1,4 +1,7 @@
 syntax on
 
 set so=7
+set nu
+:set expandtab
+:set tabstop=2
 
