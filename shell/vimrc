@@ -5,3 +5,7 @@ set nu
 :set expandtab
 :set tabstop=2
 
+"vim plugins
+call plug#begin('~/.vim/plugged')
+Plug 'elzr/vim-json'
+call plug#end()

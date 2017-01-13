@@ -36,3 +36,9 @@ if ! [ -d ~/bin ]; then
   mkdir ~/bin
 fi
 ln -sf $(grealpath ./git-radar/git-radar) ~/bin/git-radar
+
+### vim
+if ! [ -f ~/.vim/autoload/plug.vim ]; then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
