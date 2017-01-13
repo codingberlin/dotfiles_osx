@@ -8,4 +8,11 @@ set nu
 "vim plugins
 call plug#begin('~/.vim/plugged')
 Plug 'elzr/vim-json'
+Plug 'jonathanfilip/vim-lucius'
 call plug#end()
+
+"Colors
+colorscheme lucius
+LuciusWhite
+set t_Co=256
+
