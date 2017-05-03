@@ -27,3 +27,6 @@ files:
         src: services/ssh-agent.service
         type: COPY
     ~/.xsession: shell/xsession
+    ~/.emacs.d:
+        src: shell/emacs.d
+        type: LINK
