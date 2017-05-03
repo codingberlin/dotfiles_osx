@@ -1,0 +1,1 @@
+(define-package "evil-multiedit" "20160526.1134" "multiple cursors for evil-mode" '((emacs "24.4") (evil "1.2.8") (iedit "0.97") (cl-lib "0.5")) :stars '(#("18" 0 2 (font-lock-face paradox-star-face))) :url "https://github.com/hlissner/evil-multiedit" :keywords '("multiple cursors" "editing" "iedit"))
