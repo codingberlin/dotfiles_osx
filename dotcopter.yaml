@@ -1,0 +1,25 @@
+files:
+    ~/bin/git-radar: 
+        src: ./git-radar/git-radar 
+        type: LINK
+    ~/.gitconfig: 
+        src: ./shell/gitconfig        
+        type: LINK
+    ~/.vimrc: 
+        src: ./shell/vimrc
+        type: LINK
+    ~/.tmux.conf: 
+        src: ./shell/tmux.conf
+        type: LINK
+    ~/.ideavimrc: 
+        src: ./shell/ideavimrc
+        type: LINK
+    ~/.zshrc.local: 
+        src: ./shell/zshrc.local
+        type: LINK
+    ~/.zshrc: 
+        src: ./shell/zshrc
+        type: LINK
+    ~/.sbt/0.13/plugins/build.sbt:
+        src: ./shell/sbt.plugins
+        type: LINK
