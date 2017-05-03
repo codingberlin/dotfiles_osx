@@ -16,7 +16,7 @@ files:
         type: LINK
     ~/.zshrc.local: 
         src: ./shell/zshrc.local
-        type: LINK
+        type: COPY
     ~/.zshrc: 
         src: ./shell/zshrc
         type: LINK
