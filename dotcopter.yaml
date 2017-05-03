@@ -23,3 +23,7 @@ files:
     ~/.sbt/0.13/plugins/build.sbt:
         src: ./shell/sbt.plugins
         type: LINK
+    ~/.config/systemd/user/ssh-agent.service:
+        src: services/ssh-agent.service
+        type: COPY
+    ~/.xsession: shell/xsession
