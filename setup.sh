@@ -34,6 +34,10 @@ fi
 [[ -f ~/.cargo/bin/dotcopter ]] || cargo install dotcopter
 ~/.cargo/bin/dotcopter dotcopter.yaml apply
 
+if [ "$USE_BREW" = false ]; then
+  $INSTALL_COMMAND scrot
+fi
+
 if [ "$USE_BREW" = true ]; then
   # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories/22753363
   sudo chmod -R 755 /usr/local/share/zsh

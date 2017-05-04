@@ -30,3 +30,9 @@ files:
     ~/.emacs.d:
         src: shell/emacs.d
         type: LINK
+    ~/.i3:
+        src: shell/i3
+        type: LINK
+    ~/.config/i3/config:
+        src: shell/i3config
+        type: LINK
