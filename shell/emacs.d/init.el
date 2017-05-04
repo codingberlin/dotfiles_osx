@@ -1,12 +1,11 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq user-full-name "Stephan Bauer")
-(setq user-mail-address "stephan.bauer@immobilienscout24.de")
+(setq user-full-name "Patrick Haun")
+(setq user-mail-address "bomgar85@googlemail.com")
 
 (add-to-list 'load-path (expand-file-name "subconfigs" user-emacs-directory))
 (require 'init-subconfigs)
@@ -36,8 +35,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (global-set-key [escape] 'evil-exit-emacs-state)
 
-; C-u scroll up like in vim 
-(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+; C-u scroll up like in vim
+(define-key global-map (kbd "C-f") 'universal-argument)
+(define-key universal-argument-map (kbd "C-u") nil)
+(define-key universal-argument-map (kbd "C-f") 'universal-argument-more)
+(define-key global-map (kbd "C-u") 'nil)
+(eval-after-load 'evil-maps
+  '(progn
+     (define-key evil-motion-state-map (kbd "C-f") nil)
+          (define-key evil-motion-state-map (kbd "C-u") 'evil-scroll-up)))
 
 
 (set-default-font "Source Code Pro 12")
+
+(setq custom-file "/dev/null")
+
