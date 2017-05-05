@@ -20,8 +20,11 @@ files:
     ~/.zshrc: 
         src: ./shell/zshrc
         type: LINK
+    ~/.sbt/0.13/global.sbt:
+        src: ./shell/sbt/global.sbt
+        type: LINK
     ~/.sbt/0.13/plugins/build.sbt:
-        src: ./shell/sbt.plugins
+        src: ./shell/sbt/plugins/build.sbt
         type: LINK
     ~/.config/systemd/user/ssh-agent.service:
         src: services/ssh-agent.service
