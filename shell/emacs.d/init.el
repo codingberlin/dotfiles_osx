@@ -4,10 +4,10 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq user-full-name "Patrick Haun")
-(setq user-mail-address "bomgar85@googlemail.com")
+(setq user-full-name "Stephan Bauer")
+(setq user-mail-address "stephan.bauer@21re.de")
 
-(add-to-list 'load-path (expand-file-name "subconfigs" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "emacs_subconfigs" user-emacs-directory))
 (require 'init-subconfigs)
 
 

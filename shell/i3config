@@ -169,3 +169,5 @@ assign [class="Emacs"] $w3
 assign [class="konsole"] $w4
 
 bindsym Ctrl+Mod1+l exec "sh ~/.i3/lock.sh"
+exec --no-startup-id feh --bg-fill /home/sbauer/backgrounds/IMG_3524.JPG
+
