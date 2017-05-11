@@ -93,9 +93,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $w1 "1: mail"
-set $w4 "4: www"
-set $w3 "3: idea"
 set $w2 "2: terminal"
+set $w3 "3: www"
+set $w4 "4: IntelliJ"
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -164,8 +164,8 @@ workspace 1 output eDP1
 workspace 2 output DP1-2
 workspace 3 output DP1-2
 workspace 4 output DP1-2
-assign [class="Firefox"] $w4
-assign [class="IntelliJ"] $w3
+assign [class="Firefox"] $w3
+assign [class="jetbrains"] $w4
 assign [class="konsole"] $w2
 
 bindsym Ctrl+Mod1+l exec "sh ~/.i3/lock.sh"
