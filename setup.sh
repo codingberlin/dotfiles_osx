@@ -39,6 +39,7 @@ if [ "$USE_BREW" = false ]; then
   $INSTALL_COMMAND hub
   $INSTALL_COMMAND i3status
   $INSTALL_COMMAND network-manager-applet 
+  $INSTALL_COMMAND chromium
 fi
 
 if [ "$USE_BREW" = true ]; then
