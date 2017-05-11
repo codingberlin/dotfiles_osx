@@ -93,9 +93,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $w1 "1: mail"
-set $w2 "2: www"
-set $w3 "3: emacs"
-set $w4 "4: terminal"
+set $w4 "4: www"
+set $w3 "3: idea"
+set $w2 "2: terminal"
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -164,10 +164,11 @@ workspace 1 output eDP1
 workspace 2 output DP1-2
 workspace 3 output DP1-2
 workspace 4 output DP1-2
-assign [class="Firefox"] $w2
-assign [class="Emacs"] $w3
-assign [class="konsole"] $w4
+assign [class="Firefox"] $w4
+assign [class="IntelliJ"] $w3
+assign [class="konsole"] $w2
 
 bindsym Ctrl+Mod1+l exec "sh ~/.i3/lock.sh"
 exec --no-startup-id feh --bg-fill /home/sbauer/backgrounds/IMG_3524.JPG
 
+exec --no-startup-id nm-applet
