@@ -169,6 +169,8 @@ assign [class="konsole"] $w2
 assign [class="Firefox"] $w3
 assign [class="Chromium"] $w1
 
+for_window [class="konsole"] border none
+
 bindsym Ctrl+Mod1+l exec "sh ~/.i3/lock.sh"
 exec --no-startup-id feh --bg-fill /home/sbauer/backgrounds/IMG_3524.JPG
 
@@ -177,3 +179,7 @@ exec --no-startup-id /usr/bin/chromium https://portal.office.com https://21re.sl
 exec --no-startup-id /usr/bin/konsole
 exec --no-startup-id /usr/bin/firefox
 exec --no-startup-id /home/sbauer/lib/intellij/idea-IC-171.4249.39/bin/idea
+
+bindsym $mod+m move workspace to output left
+focus_follows_mouse no
+
