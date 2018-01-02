@@ -21,3 +21,5 @@
 	added = green bold
 	changed = magenta bold
 	untracked = red bold
+[rerere]
+	enabled = true
