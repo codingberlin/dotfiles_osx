@@ -9,10 +9,12 @@ if [ "$USE_BREW" = true ]; then
   brew update
   brew install coreutils
   INSTALL_COMMAND="brew install"
+  REALPATH_COMMAND="grealpath"
 fi
 
 if [ "$USE_BREW" = false ]; then
   INSTALL_COMMAND="sudo pacman -S --needed --noconfirm"
+  REALPATH_COMMAND="realpath"
 fi
 
 $INSTALL_COMMAND vim
@@ -46,20 +48,21 @@ if [ "$USE_BREW" = true ]; then
   # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories/22753363
   sudo chmod -R 755 /usr/local/share/zsh
   sudo chown -R root:staff /usr/local/share/zsh
+fi
 
 ### zsh
-ln -sf $(grealpath ./shell/profile) ~/.profile
-ln -sf $(grealpath ./shell/zshrc) ~/.zshrc
-ln -sf $(grealpath ./shell/zshrc.local) ~/.zshrc.local
-ln -sf $(grealpath ./shell/ideavimrc) ~/.ideavimrc
+ln -sf $($REALPATH_COMMAND ./shell/profile) ~/.profile
+ln -sf $($REALPATH_COMMAND ./shell/zshrc) ~/.zshrc
+ln -sf $($REALPATH_COMMAND ./shell/zshrc.local) ~/.zshrc.local
+ln -sf $($REALPATH_COMMAND ./shell/ideavimrc) ~/.ideavimrc
 
-ln -sf $(grealpath ./shell/tmux.conf) ~/.tmux.conf
+ln -sf $($REALPATH_COMMAND ./shell/tmux.conf) ~/.tmux.conf
 
-ln -sf $(grealpath ./shell/vimrc) ~/.vimrc
-ln -sf $(grealpath ./shell/gitconfig) ~/.gitconfig
+ln -sf $($REALPATH_COMMAND ./shell/vimrc) ~/.vimrc
+ln -sf $($REALPATH_COMMAND ./shell/gitconfig) ~/.gitconfig
 
 if ! [ -d ~/bin ]; then
   mkdir ~/bin
 fi
-ln -sf $(grealpath ./git-radar/git-radar) ~/bin/git-radar
-fi
+ln -sf $($REALPATH_COMMAND ./git-radar/git-radar) ~/bin/git-radar
+
