@@ -39,6 +39,7 @@ fi
 if [ "$USE_BREW" = false ]; then
   $INSTALL_COMMAND scrot
   $INSTALL_COMMAND hub
+  $INSTALL_COMMAND i3
   $INSTALL_COMMAND i3status
   $INSTALL_COMMAND network-manager-applet 
   $INSTALL_COMMAND chromium
