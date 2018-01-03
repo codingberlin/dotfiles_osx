@@ -28,3 +28,15 @@ export TERM=screen-256color
 # remove timeout to get ecs key working in emacs
 KEYTIMEOUT=1
 
+function awscredentials () {
+        eval $(aws ecr get-login --region eu-west-1 | sed 's/-e none//')
+}
+
+function compose () {
+        awscredentials
+        HOSTNAME=$(hostname -i | cut -d" " -f1)
+        docker-compose up -d
+}
+
+export PATH=$PATH:/home/stephan/.cargo/bin
+
