@@ -28,14 +28,18 @@ export TERM=screen-256color
 # remove timeout to get ecs key working in emacs
 KEYTIMEOUT=1
 
-function awscredentials () {
-        eval $(aws ecr get-login --region eu-west-1 | sed 's/-e none//')
-}
-
 function compose () {
-        awscredentials
-        HOSTNAME=$(hostname -i | cut -d" " -f1)
-        docker-compose up -d
+  # to gain access to docker registry
+  source ../aws-bootstrap/.venv/bin/activate
+  eval $(aws ecr get-login --region eu-west-1)
+  # to ensure up to date docker images with fixture data
+  docker-compose kill
+  docker-compose rm -f
+  docker-compose pull
+  # set environment for sbt to docker communication
+  export HOSTNAME=$(ip a | grep -Eo "inet (addr:)?([0-9]*\\.){3}[0-9]*" | grep -Eo "([0-9]*\\.){3}[0-9]*" | grep -v "127.0.0.1" | grep -v "172.")
+  # to start docker containers
+  docker-compose up -d
 }
 
 export PATH=$PATH:/home/stephan/.cargo/bin
