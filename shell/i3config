@@ -94,8 +94,8 @@ bindsym $mod+a focus parent
 
 set $w1 "1: mail"
 set $w2 "2: terminal"
-set $w3 "3: www"
-set $w4 "4: IntelliJ"
+set $w3 "3: IntelliJ"
+set $w4 "4: www"
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -163,22 +163,22 @@ bar {
 workspace 1 output eDP1
 workspace 2 output DP1-2
 workspace 3 output DP1-2
-workspace 4 output DP1-2
-assign [class="jetbrains"] $w4
+workspace 4 output DP1-1
+assign [class="jetbrains"] $w3
 assign [class="konsole"] $w2
-assign [class="Firefox"] $w3
+assign [class="Firefox"] $w4
 assign [class="Chromium"] $w1
 
 for_window [class="konsole"] border none
 
-bindsym Ctrl+Mod1+l exec "sh ~/.i3/lock.sh"
+bindsym Ctrl+$mod+l exec "sh ~/.i3/lock.sh"
 exec --no-startup-id feh --bg-fill /home/sbauer/backgrounds/IMG_3524.JPG
 
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/bin/chromium https://portal.office.com https://21re.slack.com    
 exec --no-startup-id /usr/bin/konsole
 exec --no-startup-id /usr/bin/firefox
-exec --no-startup-id /home/sbauer/lib/intellij/idea-IC-171.4249.39/bin/idea
+exec --no-startup-id /home/stephan/lib/idea-IU-173.4127.27/bin/idea.sh
 
 bindsym $mod+m move workspace to output left
 focus_follows_mouse no
