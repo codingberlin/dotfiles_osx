@@ -27,6 +27,9 @@ $INSTALL_COMMAND hunspell
 $INSTALL_COMMAND sbt
 $INSTALL_COMMAND tig
 $INSTALL_COMMAND cargo
+$INSTALL_COMMAND aws-cli
+$INSTALL_COMMAND fzf
+$INSTALL_COMMAND npm
 
 git submodule update --init --recursive
 if ! [ -f ~/.vim/autoload/plug.vim ]; then
@@ -46,6 +49,8 @@ if [ "$USE_BREW" = false ]; then
   $INSTALL_COMMAND i3status
   $INSTALL_COMMAND network-manager-applet 
   $INSTALL_COMMAND chromium
+  $INSTALL_COMMAND docker
+  $INSTALL_COMMAND docker-compose
 fi
 
 if [ "$USE_BREW" = true ]; then
@@ -70,3 +75,5 @@ if ! [ -d ~/bin ]; then
 fi
 ln -sf $($REALPATH_COMMAND ./git-radar/git-radar) ~/bin/git-radar
 
+### nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
