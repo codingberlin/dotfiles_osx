@@ -31,7 +31,7 @@ KEYTIMEOUT=1
 function compose () {
   # to gain access to docker registry
   source ../aws-bootstrap/.venv/bin/activate
-  eval $(aws ecr get-login --region eu-west-1)
+  eval $(aws ecr get-login --region eu-west-1 | sed 's/-e none//')
   # to ensure up to date docker images with fixture data
   docker-compose kill
   docker-compose rm -f
@@ -42,5 +42,12 @@ function compose () {
   docker-compose up -d
 }
 
+function printpdf() {
+       pdf2ps ${1:?no PDF file specified, try "printpdf <pdf>"} - | nc KM99700C.fritz.box 9100 
+}
+
 export PATH=$PATH:/home/stephan/.cargo/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
