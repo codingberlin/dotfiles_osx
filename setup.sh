@@ -53,6 +53,8 @@ if [ "$USE_BREW" = false ]; then
   $INSTALL_COMMAND chromium
   $INSTALL_COMMAND docker
   $INSTALL_COMMAND docker-compose
+  yaourt -S --noconfirm aura
+  sudo aura -A --noconfirm intellij-idea-ultimate-edition
 fi
 
 if [ "$USE_BREW" = true ]; then
