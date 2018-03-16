@@ -28,7 +28,16 @@ export TERM=screen-256color
 # remove timeout to get ecs key working in emacs
 KEYTIMEOUT=1
 
+# disable caps lock
+setxkbmap -option ctrl:nocaps
+
+function sethostname() {
+  export HOSTNAME=$(ip a | grep -Eo "inet (addr:)?([0-9]*\\.){3}[0-9]*" | grep -Eo "([0-9]*\\.){3}[0-9]*" | grep -v "127.0.0.1" | grep -v "172.")
+  echo "set \e[34;1mHOSTNAME=\e[34;4m$HOSTNAME\e[0m for sbt to docker communication"
+}
+
 function compose () {
+  sethostname
   # to gain access to docker registry
   source ../aws-bootstrap/.venv/bin/activate
   eval $(aws ecr get-login --region eu-west-1 | sed 's/-e none//')
@@ -36,18 +45,23 @@ function compose () {
   docker-compose kill
   docker-compose rm -f
   docker-compose pull
-  # set environment for sbt to docker communication
-  export HOSTNAME=$(ip a | grep -Eo "inet (addr:)?([0-9]*\\.){3}[0-9]*" | grep -Eo "([0-9]*\\.){3}[0-9]*" | grep -v "127.0.0.1" | grep -v "172.")
   # to start docker containers
   docker-compose up -d
+}
+
+function compose-kill-all {
+  for i in $(docker ps | tail -n +2 | cut -d" " -f1); do docker kill $i; done
 }
 
 function printpdf() {
        pdf2ps ${1:?no PDF file specified, try "printpdf <pdf>"} - | nc KM99700C.fritz.box 9100 
 }
 
-export PATH=$PATH:/home/stephan/.cargo/bin
+alias fbjenkins="fw ls | fzf | xargs fw inspect -j | jq -r '.git' | cut -d : -f 2 | sed 's/\.git$//g' | sed 's/\(.*\)\/\(.*\)/https:\/\/jenkins.21re.works\/job\/\1\/job\/\2\/job\/master\//g' | xargs xdg-open"
+
+export PATH=$PATH:/home/sbauer/.cargo/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/home/sbauer/lib/goat
 
