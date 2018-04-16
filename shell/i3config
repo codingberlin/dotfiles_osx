@@ -175,7 +175,7 @@ bindsym Ctrl+$mod+l exec "sh ~/.i3/lock.sh"
 exec --no-startup-id feh --bg-fill /home/sbauer/backgrounds/IMG_3524.JPG
 
 exec --no-startup-id nm-applet
-exec --no-startup-id /usr/bin/chromium https://portal.office.com https://21re.slack.com https://21real.atlassian.net/secure/RapidBoard.jspa?rapidView=6&projectKey=TRADE   
+exec --no-startup-id /usr/bin/chromium https://portal.office.com https://21re.slack.com
 exec --no-startup-id /usr/bin/konsole
 exec --no-startup-id /usr/bin/firefox
 #exec --no-startup-id /home/sbauer/lib/idea-IU-173.4127.27/bin/idea.sh
