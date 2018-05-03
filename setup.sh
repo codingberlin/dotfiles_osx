@@ -33,8 +33,7 @@ $INSTALL_COMMAND aspell
 $INSTALL_COMMAND hunspell
 $INSTALL_COMMAND sbt
 $INSTALL_COMMAND tig
-$INSTALL_COMMAND cargo
-$INSTALL_COMMAND aws-cli
+$INSTALL_COMMAND rust
 $INSTALL_COMMAND fzf
 
 git submodule update --init --recursive
@@ -46,6 +45,7 @@ fi
 ~/.cargo/bin/dotcopter dotcopter.yaml -f apply
 
 if [ "$USE_BREW" = false ]; then
+  $INSTALL_COMMAND aws-cli
   $INSTALL_COMMAND scrot
   $INSTALL_COMMAND hub
   $INSTALL_COMMAND arandr
@@ -62,6 +62,7 @@ if [ "$USE_BREW" = false ]; then
 fi
 
 if [ "$USE_BREW" = true ]; then
+  pip3 install awscli --upgrade --user
   # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories/22753363
   sudo chmod -R 755 /usr/local/share/zsh
   sudo chown -R root:staff /usr/local/share/zsh
