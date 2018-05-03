@@ -36,7 +36,6 @@ $INSTALL_COMMAND tig
 $INSTALL_COMMAND cargo
 $INSTALL_COMMAND aws-cli
 $INSTALL_COMMAND fzf
-$INSTALL_COMMAND npm
 
 git submodule update --init --recursive
 if ! [ -f ~/.vim/autoload/plug.vim ]; then
@@ -73,4 +72,7 @@ ln -sf $($REALPATH_COMMAND ./shell/profile) ~/.profile
 
 ### nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install node
 
