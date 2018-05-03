@@ -4,12 +4,19 @@ set -u -e -E -C -o pipefail
 USE_BREW=true
 brew update >/dev/null 2>&1 || USE_BREW=false 
 
+# https://github.com/Homebrew/brew/issues/2491
+function brew_install_or_upgrade {
+	brew bundle -v --file=- <<-EOS
+		brew "$1"
+	EOS
+}
+
 if [ "$USE_BREW" = true ]; then
   which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew update
-  brew install coreutils
-  INSTALL_COMMAND="brew install"
+  INSTALL_COMMAND="brew_install_or_upgrade"
   REALPATH_COMMAND="grealpath"
+  $INSTALL_COMMAND coreutils
 fi
 
 if [ "$USE_BREW" = false ]; then
