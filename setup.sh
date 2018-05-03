@@ -30,8 +30,6 @@ $INSTALL_COMMAND cargo
 $INSTALL_COMMAND aws-cli
 $INSTALL_COMMAND fzf
 $INSTALL_COMMAND npm
-sudo npm install -g typescript
-
 
 git submodule update --init --recursive
 if ! [ -f ~/.vim/autoload/plug.vim ]; then
