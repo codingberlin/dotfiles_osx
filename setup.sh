@@ -44,7 +44,7 @@ if ! [ -f ~/.vim/autoload/plug.vim ]; then
 fi
 
 [[ -f ~/.cargo/bin/dotcopter ]] || cargo install dotcopter
-~/.cargo/bin/dotcopter dotcopter.yaml apply
+~/.cargo/bin/dotcopter dotcopter.yaml -f apply
 
 if [ "$USE_BREW" = false ]; then
   $INSTALL_COMMAND scrot
@@ -70,19 +70,6 @@ fi
 
 ### zsh
 ln -sf $($REALPATH_COMMAND ./shell/profile) ~/.profile
-ln -sf $($REALPATH_COMMAND ./shell/zshrc) ~/.zshrc
-ln -sf $($REALPATH_COMMAND ./shell/zshrc.local) ~/.zshrc.local
-ln -sf $($REALPATH_COMMAND ./shell/ideavimrc) ~/.ideavimrc
-
-ln -sf $($REALPATH_COMMAND ./shell/tmux.conf) ~/.tmux.conf
-
-ln -sf $($REALPATH_COMMAND ./shell/vimrc) ~/.vimrc
-ln -sf $($REALPATH_COMMAND ./shell/gitconfig) ~/.gitconfig
-
-if ! [ -d ~/bin ]; then
-  mkdir ~/bin
-fi
-ln -sf $($REALPATH_COMMAND ./git-radar/git-radar) ~/bin/git-radar
 
 ### nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
