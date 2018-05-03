@@ -78,4 +78,5 @@ fi
 ln -sf $($REALPATH_COMMAND ./git-radar/git-radar) ~/bin/git-radar
 
 ### nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
