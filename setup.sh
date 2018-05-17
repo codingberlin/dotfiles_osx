@@ -35,6 +35,8 @@ $INSTALL_COMMAND sbt
 $INSTALL_COMMAND tig
 $INSTALL_COMMAND rust
 $INSTALL_COMMAND fzf
+$INSTALL_COMMAND docker
+$INSTALL_COMMAND docker-compose
 
 git submodule update --init --recursive
 if ! [ -f ~/.vim/autoload/plug.vim ]; then
@@ -55,8 +57,6 @@ if [ "$USE_BREW" = false ]; then
   $INSTALL_COMMAND i3status
   $INSTALL_COMMAND network-manager-applet 
   $INSTALL_COMMAND chromium
-  $INSTALL_COMMAND docker
-  $INSTALL_COMMAND docker-compose
   yaourt -S --noconfirm aura
   sudo aura -A --noconfirm intellij-idea-ultimate-edition
 fi
@@ -66,6 +66,19 @@ if [ "$USE_BREW" = true ]; then
   # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories/22753363
   sudo chmod -R 755 /usr/local/share/zsh
   sudo chown -R root:staff /usr/local/share/zsh
+
+  #docker
+  $INSTALL_COMMAND docker-machine
+  $INSTALL_COMMAND xhyve
+  $INSTALL_COMMAND docker-machine-driver-xhyve
+  echo "docker: fix permissions"
+  sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+  sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+  brew cask install virtualbox
+  brew cask upgrade
+  echo "docker: create default docker-machine if not existent"
+  docker-machine ls | grep default || docker-machine create default --driver xhyve --xhyve-experimental-nfs-share
+
 fi
 
 ### zsh

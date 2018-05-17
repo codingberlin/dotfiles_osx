@@ -65,3 +65,5 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/home/sbauer/lib/goat
 
+eval $(docker-machine env default)
+
