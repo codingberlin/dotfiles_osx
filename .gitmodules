@@ -1,6 +1,0 @@
-[submodule "git-radar"]
-	path = git-radar
-	url = https://github.com/michaeldfallen/git-radar.git
-[submodule "shell/emacs.d/emacs_subconfigs"]
-	path = shell/emacs.d/emacs_subconfigs
-	url = https://github.com/brocode/emacs_subconfigs.git

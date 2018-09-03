@@ -1,0 +1,8 @@
+brew "vim"
+brew "wget"
+brew "zsh"
+brew "tmux"
+brew "tree"
+brew "tig"
+brew "coreutils"
+brew "michaeldfallen/formula/git-radar"
