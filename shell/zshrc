@@ -13,7 +13,7 @@ compinit
 
 #gitradar
 setopt PROMPT_SUBST
-export PROMPT="%n@%m%d\$(git-radar --zsh --fetch)> "
+export PROMPT="[38;05;4m%~[00m\$(git-radar --zsh --fetch)[38;05;4m>[00m "
 
 # alias
 alias ll='ls -GFhla'
