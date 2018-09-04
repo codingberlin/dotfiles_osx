@@ -6,3 +6,5 @@ brew "tree"
 brew "tig"
 brew "coreutils"
 brew "michaeldfallen/formula/git-radar"
+cask "intellij-idea"
+
