@@ -1,6 +1,6 @@
 [user]
 	name = Stephan Bauer
-	email = stephan.bauer@21re.de
+	email = stephan.bauer@klarna.com
 
 [core]
 	autocrlf = input
@@ -23,3 +23,4 @@
 	untracked = red bold
 [rerere]
 	enabled = true
+
