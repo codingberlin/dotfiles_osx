@@ -10,4 +10,5 @@ cask "intellij-idea"
 brew "maven"
 brew "git-crypt"
 brew "gnupg"
+brew "htop"
 
