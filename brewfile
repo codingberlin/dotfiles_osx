@@ -11,4 +11,5 @@ brew "maven"
 brew "git-crypt"
 brew "gnupg"
 brew "htop"
+cask "font-source-code-pro"
 

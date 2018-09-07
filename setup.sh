@@ -3,6 +3,7 @@ set -u -e -E -C -o pipefail
 
 mkdir -p ~/bin
 
+brew tap caskroom/fonts
 brew bundle -v --file=brewfile
 
 ln -s -f $(grealpath ./shell/vimrc) ~/.vimrc
