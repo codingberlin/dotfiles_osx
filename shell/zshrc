@@ -3,6 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/stephan.bauer/.zshrc'
@@ -47,8 +48,6 @@ function compose () {
 function compose-kill-all {
   for i in $(docker ps | tail -n +2 | cut -d" " -f1); do docker kill $i; done
 }
-
-alias fbjenkins="fw ls | fzf | xargs fw inspect -j | jq -r '.git' | cut -d : -f 2 | sed 's/\.git$//g' | sed 's/\(.*\)\/\(.*\)/https:\/\/jenkins.21re.works\/job\/\1\/job\/\2\/job\/master\//g' | xargs xdg-open"
 
 export PATH=$PATH:/home/sbauer/.cargo/bin
 export PATH=$PATH:/usr/local/go/bin
