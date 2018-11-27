@@ -12,4 +12,6 @@ brew "git-crypt"
 brew "gnupg"
 brew "htop"
 cask "font-source-code-pro"
+brew "yarn"
+brew "avro-tools"
 
