@@ -61,18 +61,24 @@ export AD_USERNAME=stephan.bauer
 
 #eval $(docker-machine env default)
 
+alias ssh-staging-eu-settings-backend='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-staging-eu-us.pem cloud-user@10.225.161.206'
+alias ssh-playground-eu-settings-backend='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.176.247'
+alias ssh-production-eu-settings-backend='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.177.88'
 alias ssh-staging-eu-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-staging-eu-us.pem cloud-user@10.225.153.166'
 alias ssh-staging-us-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-staging-eu-us.pem cloud-user@10.225.156.242'
 alias ssh-playground-eu-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.175.178'
-alias ssh-playground-us-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-us.pem cloud-user@10.226.246.161'
-alias ssh-production-eu-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.171.181'
-alias ssh-production-us-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-us.pem cloud-user@10.226.244.141'
-alias ssh-production-eu-tamer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.174.67'
+alias ssh-playground-us-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-us.pem cloud-user@10.226.246.54'
+alias ssh-production-eu-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.169.136'
+alias ssh-production-us-moma='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-us.pem cloud-user@10.226.244.213'
+alias ssh-production-eu-tamer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.169.175'
 alias ssh-playground-eu-tamer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.169.249'
-alias ssh-production-us-tamer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-us.pem cloud-user@10.226.249.64'
+alias ssh-production-us-tamer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-us.pem cloud-user@10.226.245.2'
 alias ssh-staging-eu-tamer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-staging-eu-us.pem cloud-user@10.225.162.62'
 alias ssh-playground-eu-moma-testpartner='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.173.137'
 alias ssh-production-eu-moma-salesforce='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.176.28'
 alias ssh-production-us-moma-salesforce='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-us.pem cloud-user@10.226.246.73'
-alias ssh-production-eu-moma-bouncer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.168.191'
+alias ssh-production-eu-bouncer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.169.227'
+alias ssh-playground-eu-bouncer='ssh -o IdentitiesOnly=yes -i ~/secrets/keys/mjolnir-production-eu.pem cloud-user@10.228.173.138'
+
+alias localdocker='docker run -it --rm -p 9999:8080 -v $PWD:/home/wiremock rodolpheche/wiremock --verbose'
 
